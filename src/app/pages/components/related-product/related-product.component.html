@@ -1,0 +1,11 @@
+ <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="related__title">
+                    <h5>{{DataTitle}}</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6" *ngFor=" let item of relativeProObject;let i=index;">
+                <app-item [itemObject]="relativeProObject[i]"></app-item>
+            </div>
+           
+        </div>

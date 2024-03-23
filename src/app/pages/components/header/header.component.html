@@ -1,0 +1,88 @@
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay" [ngClass]="isShowMenu ? 'active' : ''"></div>
+<div class="offcanvas-menu-wrapper" [ngClass]="isShowMenu ? 'active' : ''">
+    <div class="offcanvas__close" (click)=" showMenu()">+</div>
+    <ul class="offcanvas__widget">
+        <li><span class="icon_search search-switch"></span></li>
+        <li><a href="#"><span class="icon_heart_alt"></span>
+            <div class="tip">2</div>
+        </a></li>
+        <li><a routerLink="cart"><span class="icon_bag_alt"></span>
+            <div class="tip">2</div>
+        </a></li>
+    </ul>
+    <div class="offcanvas__logo">
+        <a routerLink="/"><img src="../../../../assets/img/logo.png" alt=""></a>
+    </div>
+    <div id="mobile-menu-wrap">
+        <div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style=""><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><nav class="slicknav_nav slicknav_hidden" style="display: none;" aria-hidden="true" role="menu">
+            <ul>
+                <li><a routerLink="/" role="menuitem">Home</a></li>
+                <li><a routerLink="women" role="menuitem">Women’s</a></li>
+                <li><a routerLink="men" role="menuitem">Men’s</a></li>
+                <li><a routerLink="about" role="menuitem">About</a></li>
+                <li><a routerLink="" role="menuitem">Blog</a></li>
+                <li><a routerLink="contact" role="menuitem">Contact</a></li>
+            </ul>
+        </nav></div>
+    </div>
+    <div class="offcanvas__auth">
+        <a routerLink="login">Login</a>
+        <a routerLink="register">Register</a>
+    </div>
+</div>
+<!-- Offcanvas Menu End -->
+
+<!-- Header Section Begin -->
+<header class="header active">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-lg-2">
+                <div class="header__logo">
+                    <a routerLink="/"><img src="../../../../assets/img/logo.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-7">
+                <nav class="header__menu">
+                    <ul>
+                        <li class="active cp" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a>Home</a></li>
+                        <li class="cp" routerLink="women" routerLinkActive="active"><a>Women’s</a></li>
+                        <li class="cp" routerLink="men" routerLinkActive="active"><a>Men’s</a></li>
+                        <li class="cp" routerLink="about" routerLinkActive="active"><a>About</a></li>
+                        <!-- <li class="cp" routerLink="/" routerLinkActive="active"><a>Pages</a>
+                            <ul class="dropdown">
+                                <li routerLink="/" routerLinkActive="active"><a>Product Details</a></li>
+                                <li routerLink="/" routerLinkActive="active"><a>Shop Cart</a></li>
+                                <li routerLink="/" routerLinkActive="active"><a>Checkout</a></li>
+                                <li routerLink="/" routerLinkActive="active"><a>Blog Details</a></li>
+                            </ul>
+                        </li> -->
+                        <li class="cp" routerLink="blogs" routerLinkActive="active"><a>Blog</a></li>
+                        <li class="cp" routerLink="contact" routerLinkActive="active"><a>Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__right">
+                    <div class="header__right__auth">
+                        <a routerLink="login">Login</a>
+                        <a routerLink="register">Register</a>
+                    </div>
+                    <ul class="header__right__widget">
+                        <li><span class="icon_search search-switch"></span></li>
+                        <li><a routerLink="wishlist" title="wishlist"><span class="icon_heart_alt"></span>
+                            <div class="tip">2</div>
+                        </a></li>
+                        <li><a routerLink="cart" title="cart"><span class="icon_bag_alt"></span>
+                            <div class="tip">{{totalCart}}</div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="canvas__open" (click)="showMenu()">
+            <i class="fa fa-bars" ></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->

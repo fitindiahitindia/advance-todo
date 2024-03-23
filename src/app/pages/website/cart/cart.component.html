@@ -1,0 +1,92 @@
+<!-- Shop Cart Section Begin -->
+ <section class="shop-cart spad">
+    <div class="container"  *ngIf="cartTotal !=0">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="shop__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of cartItems;let i=index">
+                                <td class="cart__product__item">
+                                    <img src="../../../../assets/img/shop-cart/cp-{{i+1}}.jpg" alt="">
+                                    <div class="cart__product__item__title">
+                                        <h6>{{item.name}}</h6>
+                                        <div class="rating">
+                                            <i class="fa fa-star ml-1"></i>
+                                            <i class="fa fa-star ml-1"></i>
+                                            <i class="fa fa-star ml-1"></i>
+                                            <i class="fa fa-star ml-1"></i>
+                                            <i class="fa fa-star ml-1"></i>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="cart__price">$ {{item.price}}</td>
+                                <td class="cart__quantity">
+                                    <div class="pro-qty d-flex align-items-center">
+                                        <div class="cp" style="background-color:blueviolet;padding:0 3px;color: antiquewhite;" (click)="incDecQuantity(item.id,'++')">+</div>
+                                        <div class="mx-1">{{item.quantity}}</div>
+                                        <div class="cp" style="background-color:blueviolet;padding:0 3px;color: antiquewhite;" (click)="incDecQuantity(item.id,'--')">-</div>
+                                    </div>
+                                </td>
+                                <td class="cart__total">$ {{item.price * item.quantity}}</td>
+                                <td class="cart__close" (click)="removeItemCart(item.id)"><span class="icon_close"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="cart__btn">
+                    <a href="#">Continue Shopping</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="cart__btn update__btn">
+                    <a href="#"><span class="icon_loading"></span> Update cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="discount__content">
+                    <h6>Discount codes</h6>
+                    <form action="#">
+                        <input type="text" placeholder="Enter your coupon code">
+                        <button type="submit" class="site-btn">Apply</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-2">
+                <div class="cart__total__procced">
+                    <h6>Cart total ({{cartTotalQuantity}})</h6>
+                    <ul>
+                        <li>Subtotal <span>$ {{cartSubtotal}}</span></li>
+                        <li>Total <span>$ {{cartTotal}}</span></li>
+                    </ul>
+                    <a routerLink="../checkout" class="primary-btn">Proceed to checkout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container" *ngIf="cartTotal==0">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Cart is Empty</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop Cart Section End -->
+

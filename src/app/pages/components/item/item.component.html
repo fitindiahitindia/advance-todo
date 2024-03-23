@@ -1,0 +1,25 @@
+
+<div class="product__item">
+    <div class="product__item__pic set-bg" [style.background-image]="itemObject.image">
+        <div class="label new" *ngIf="itemObject.label =='new'">new</div>
+        <div class="label sale" *ngIf="itemObject.label =='sale'">sale</div>
+        <div class="label stockout" *ngIf="itemObject.label == 'stockout'">out of stock</div>
+        <ul class="product__hover">
+            <li><a href="img/product/product-1.jpg" class="image-popup"><span
+                        class="arrow_expand"></span></a></li>
+            <li><a><span class="icon_heart_alt"></span></a></li>
+            <li><a (click)="addCart()" class="cp"><span class="icon_bag_alt"></span></a></li>
+        </ul>
+    </div>
+    <div class="product__item__text">
+        <h6><a routerLink="product/{{itemObject.id}}">{{itemObject.name}}</a></h6>
+        <div class="rating">
+            <i class="fa fa-star ml-1"></i>
+            <i class="fa fa-star ml-1"></i>
+            <i class="fa fa-star ml-1"></i>
+            <i class="fa fa-star ml-1"></i>
+            <i class="fa fa-star ml-1"></i>
+        </div>
+        <div class="product__price">{{itemObject.price}}</div>
+    </div>
+</div>
