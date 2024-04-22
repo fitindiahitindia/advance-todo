@@ -1,5 +1,4 @@
 [build]
-  publish = "dist/advance-todo"
   command = "ng build"
 [[redirects]]
   from = "/*"
