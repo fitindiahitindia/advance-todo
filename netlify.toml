@@ -1,5 +1,5 @@
 [build]
-  publish = "prime"
+  publish = ""
   command = "ng build"
 [[redirects]]
   from = "/*"
